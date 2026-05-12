@@ -64,8 +64,8 @@ Chỉnh chuỗi kết nối trong:
 
 ```csharp
 private string connectionString =
-@"Data Source=.\SQLEXPRESS01;
-Initial Catalog=db_QLSV1;
+@"Data Source=.\SQLEXPRESS01;  Thay tùy localhost theo máy của ae
+Initial Catalog=db_QLSV1; lấy file trong database ở trên github về chạy full mới có thể đăng nhập có 2 loại tk (admin/test)
 Integrated Security=True;
 TrustServerCertificate=True";
 ```

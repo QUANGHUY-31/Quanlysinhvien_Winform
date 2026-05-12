@@ -91,3 +91,9 @@ create table Diem
 )
 go
 
+insert into TaiKhoan(TenDangNhap, MatKhau, LoaiTaiKhoan)
+values 
+('admin', 'admin', N'Quản trị viên'),
+('test', 'test', N'Cố vấn học tập')
+go
+
