@@ -1,4 +1,5 @@
 ﻿using BaiTapLon.BLL;
+using BaiTapLon.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

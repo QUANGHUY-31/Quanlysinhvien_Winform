@@ -2,7 +2,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace BaiTapLon
+namespace BaiTapLon.DAL
 {
     /// <summary>
     /// Lớp dùng để kết nối và thao tác với cơ sở dữ liệu SQL Server.

@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaiTapLon
+namespace BaiTapLon.Core
 {
     /// <summary>
     /// Mã hóa chuỗi văn bản bằng thuật toán SHA1.

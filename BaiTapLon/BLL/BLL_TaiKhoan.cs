@@ -1,4 +1,5 @@
-﻿using BaiTapLon.DAL;
+﻿using BaiTapLon.Core;
+using BaiTapLon.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
