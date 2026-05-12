@@ -1,0 +1,51 @@
+Sinh viên phát triển một ứng dụng quản lý sử dụng .NET WinForms, tự chọn đề tài, tích hợp cơ sở dữ liệu MySQL hoặc SQL Server hoặc csdl khác, nhằm áp dụng kiến thức lập trình .NET, giao diện đồ họa Windows Forms, và quản lý cơ sở dữ liệu.
+Phần 1: Quy trình thực hiện dự án
+2. Phát triển sản phẩm:
+
+
+- Yêu cầu chức năng tối thiểu (5 chức năng chính):
+     1. Quản lý dữ liệu chính:
+   + Thêm, sửa, xóa ít nhất một loại dữ liệu chính (ví dụ: thông tin sinh viên, sản phẩm).
+   + Hiển thị danh sách dữ liệu dưới dạng DataGridView với ít nhất 4 cột (ví dụ: mã, tên, số lượng, trạng thái).
+     2. Quản lý dữ liệu phụ:
+   + Thêm, sửa, xóa một loại dữ liệu liên quan (ví dụ: lớp học của sinh viên, danh mục sản phẩm).
+   + Hiển thị danh sách dữ liệu phụ trong DataGridView hoặc ComboBox.
+     3. Tìm kiếm nâng cao:
+   + Tìm kiếm dữ liệu theo ít nhất 2 tiêu chí (ví dụ: tên và mã số, hoặc tên và trạng thái).
+   + Hiển thị kết quả tìm kiếm trong DataGridView.
+     4. Quản lý giao dịch:
+   + Thực hiện và theo dõi ít nhất một loại giao dịch (ví dụ: mượn sách, bán hàng).
+   + Lưu thông tin giao dịch (ngày, người thực hiện, chi tiết).
+     5. Thống kê:
+   + Hiển thị ít nhất một báo cáo thống kê (ví dụ: tổng số sinh viên, tổng doanh thu).
+   + Có thể dùng Chart control hoặc bảng dữ liệu trong DataGridView.
+
+
+
+- Yêu cầu giao diện:
++ Sử dụng .NET WinForms với các thành phần:
+  + Form: Cửa sổ chính với MenuStrip để chuyển giữa các chức năng.
+  + Panel: Phân chia bố cục (ví dụ: panel danh sách, panel nhập liệu).
+  + Button: Nút thực hiện hành động (thêm, sửa, xóa, tìm kiếm, thống kê).
+  + TextBox/RichTextBox: Nhập liệu.
+  + DataGridView: Hiển thị danh sách dữ liệu chính và phụ.
+  + ComboBox: Lựa chọn dữ liệu phụ (ví dụ: danh mục, trạng thái).
+  + MessageBox: Thông báo xác nhận (ví dụ: “Bạn có chắc chắn xóa không?”) và lỗi.
++ Giao diện phải có bố cục rõ ràng, các thành phần được sắp xếp theo tab hoặc menu, màu sắc hài hòa.
+
+
+- Yêu cầu kỹ thuật:
++ Xử lý ngoại lệ:
+  + Kiểm tra dữ liệu đầu vào (ví dụ: không để trống, định dạng đúng).
+  + Xử lý lỗi kết nối cơ sở dữ liệu (ví dụ: server không phản hồi).
++ Mã nguồn:
+  + Phân chia ít nhất 5 lớp: ---------------------------------------->    ( OK , LỚP THỨ 5 LÀ HETHONG.CS )
+    + Lớp dữ liệu (ví dụ: Student, Transaction). -> ( DÙNG DATATABLE TRẢ VỀ DAL THAY CHO ENTITY )
+    + Lớp giao diện (ví dụ: MainForm). -> ( OK )
+    + Lớp quản lý cơ sở dữ liệu (ví dụ: DatabaseConnection). -> ( ĐÃ CÓ KETNOI.CS)
+    + Lớp xử lý logic (ví dụ: StudentManager).  -> ( TẤT CẢ BLL CLASS )
+  + Comment rõ ràng cho các phương thức chính (sử dụng XML Documentation nếu có thể).
+- Tính năng mở rộng (khuyến khích):
++ Giao diện đăng nhập với phân quyền (admin và user).
++ Xuất dữ liệu ra file Excel hoặc PDF (sử dụng thư viện như ClosedXML hoặc iText).
++ Sắp xếp dữ liệu trong DataGridView theo cột (ví dụ: sắp xếp theo tên, ngày).
