@@ -80,6 +80,7 @@
             dgvSinhVien.RowTemplate.Height = 30;
             dgvSinhVien.Size = new Size(913, 443);
             dgvSinhVien.TabIndex = 1;
+            dgvSinhVien.CellContentClick += dgvSinhVien_CellContentClick;
             // 
             // Column1
             // 

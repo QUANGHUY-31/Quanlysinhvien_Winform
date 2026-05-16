@@ -104,21 +104,21 @@
             // 
             txbDiemTB.Location = new Point(563, 49);
             txbDiemTB.Name = "txbDiemTB";
-            txbDiemTB.Size = new Size(54, 26);
+            txbDiemTB.Size = new Size(54, 30);
             txbDiemTB.TabIndex = 29;
             // 
             // txbDiemThi
             // 
             txbDiemThi.Location = new Point(430, 49);
             txbDiemThi.Name = "txbDiemThi";
-            txbDiemThi.Size = new Size(54, 26);
+            txbDiemThi.Size = new Size(54, 30);
             txbDiemThi.TabIndex = 28;
             // 
             // txbDiemLop
             // 
             txbDiemLop.Location = new Point(297, 49);
             txbDiemLop.Name = "txbDiemLop";
-            txbDiemLop.Size = new Size(54, 26);
+            txbDiemLop.Size = new Size(54, 30);
             txbDiemLop.TabIndex = 27;
             // 
             // btnLamMoi
@@ -171,7 +171,7 @@
             cmbLoai.Items.AddRange(new object[] { "A", "B", "C", "D", "E", "F" });
             cmbLoai.Location = new Point(665, 49);
             cmbLoai.Name = "cmbLoai";
-            cmbLoai.Size = new Size(52, 27);
+            cmbLoai.Size = new Size(52, 30);
             cmbLoai.TabIndex = 8;
             // 
             // label9
@@ -179,7 +179,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(623, 56);
             label9.Name = "label9";
-            label9.Size = new Size(36, 19);
+            label9.Size = new Size(46, 22);
             label9.TabIndex = 17;
             label9.Text = "Loại";
             // 
@@ -188,7 +188,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(490, 56);
             label8.Name = "label8";
-            label8.Size = new Size(67, 19);
+            label8.Size = new Size(89, 22);
             label8.TabIndex = 15;
             label8.Text = "Điểm TB:";
             // 
@@ -197,7 +197,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(357, 56);
             label7.Name = "label7";
-            label7.Size = new Size(67, 19);
+            label7.Size = new Size(91, 22);
             label7.TabIndex = 13;
             label7.Text = "Điểm Thi:";
             // 
@@ -206,7 +206,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(218, 56);
             label6.Name = "label6";
-            label6.Size = new Size(73, 19);
+            label6.Size = new Size(96, 22);
             label6.TabIndex = 11;
             label6.Text = "Điểm Lớp:";
             // 
@@ -214,7 +214,7 @@
             // 
             numPhanTramThi.Location = new Point(158, 52);
             numPhanTramThi.Name = "numPhanTramThi";
-            numPhanTramThi.Size = new Size(54, 26);
+            numPhanTramThi.Size = new Size(54, 30);
             numPhanTramThi.TabIndex = 4;
             // 
             // label5
@@ -222,7 +222,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(75, 56);
             label5.Name = "label5";
-            label5.Size = new Size(77, 19);
+            label5.Size = new Size(103, 22);
             label5.TabIndex = 9;
             label5.Text = "P.Trăm Thi:";
             label5.Click += label5_Click;
@@ -231,7 +231,7 @@
             // 
             numPhanTramLop.Location = new Point(722, 8);
             numPhanTramLop.Name = "numPhanTramLop";
-            numPhanTramLop.Size = new Size(54, 26);
+            numPhanTramLop.Size = new Size(54, 30);
             numPhanTramLop.TabIndex = 3;
             // 
             // label4
@@ -239,7 +239,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(623, 12);
             label4.Name = "label4";
-            label4.Size = new Size(83, 19);
+            label4.Size = new Size(108, 22);
             label4.TabIndex = 7;
             label4.Text = "P.Trăm Lớp:";
             // 
@@ -249,7 +249,7 @@
             cmbMaMonHoc.Location = new Point(481, 8);
             cmbMaMonHoc.MaxLength = 255;
             cmbMaMonHoc.Name = "cmbMaMonHoc";
-            cmbMaMonHoc.Size = new Size(136, 27);
+            cmbMaMonHoc.Size = new Size(136, 30);
             cmbMaMonHoc.TabIndex = 2;
             // 
             // label3
@@ -257,7 +257,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(386, 12);
             label3.Name = "label3";
-            label3.Size = new Size(96, 19);
+            label3.Size = new Size(121, 22);
             label3.TabIndex = 5;
             label3.Text = "Mã Môn Học:";
             // 
@@ -267,7 +267,7 @@
             cmbMaSinhVien.Location = new Point(252, 8);
             cmbMaSinhVien.MaxLength = 255;
             cmbMaSinhVien.Name = "cmbMaSinhVien";
-            cmbMaSinhVien.Size = new Size(128, 27);
+            cmbMaSinhVien.Size = new Size(128, 30);
             cmbMaSinhVien.TabIndex = 1;
             // 
             // label2
@@ -275,7 +275,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(158, 12);
             label2.Name = "label2";
-            label2.Size = new Size(94, 19);
+            label2.Size = new Size(123, 22);
             label2.TabIndex = 3;
             label2.Text = "Mã Sinh Viên:";
             // 
@@ -284,7 +284,7 @@
             txbID.Enabled = false;
             txbID.Location = new Point(105, 8);
             txbID.Name = "txbID";
-            txbID.Size = new Size(47, 26);
+            txbID.Size = new Size(47, 30);
             txbID.TabIndex = 1;
             // 
             // label1
@@ -292,7 +292,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(75, 12);
             label1.Name = "label1";
-            label1.Size = new Size(28, 19);
+            label1.Size = new Size(36, 22);
             label1.TabIndex = 2;
             label1.Text = "ID:";
             // 
@@ -317,15 +317,18 @@
             dgvDiem.MultiSelect = false;
             dgvDiem.Name = "dgvDiem";
             dgvDiem.RowHeadersVisible = false;
+            dgvDiem.RowHeadersWidth = 51;
             dgvDiem.RowTemplate.Height = 30;
             dgvDiem.Size = new Size(865, 382);
             dgvDiem.TabIndex = 1;
             dgvDiem.CellClick += dgvDiem_CellClick;
+            dgvDiem.CellContentClick += dgvDiem_CellContentClick;
             // 
             // Column1
             // 
             Column1.DataPropertyName = "Id";
             Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.Width = 65;
             // 
@@ -333,6 +336,7 @@
             // 
             Column2.DataPropertyName = "MaSV";
             Column2.HeaderText = "Mã Sinh Viên";
+            Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.Width = 145;
             // 
@@ -340,6 +344,7 @@
             // 
             Column3.DataPropertyName = "MaMH";
             Column3.HeaderText = "Mã Môn Hoc";
+            Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             Column3.Width = 145;
             // 
@@ -347,6 +352,7 @@
             // 
             Column4.DataPropertyName = "PhanTramTrenLop";
             Column4.HeaderText = "P.Trăm Lớp";
+            Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.Width = 120;
             // 
@@ -354,6 +360,7 @@
             // 
             Column5.DataPropertyName = "PhanTramThi";
             Column5.HeaderText = "P.Trăm Thi";
+            Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.Width = 120;
             // 
@@ -361,6 +368,7 @@
             // 
             Column6.DataPropertyName = "DiemTrenLop";
             Column6.HeaderText = "Điểm Lớp";
+            Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
             Column6.Width = 120;
             // 
@@ -368,6 +376,7 @@
             // 
             Column7.DataPropertyName = "DiemThi";
             Column7.HeaderText = "Điểm Thi";
+            Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
             Column7.Width = 125;
             // 
@@ -375,17 +384,21 @@
             // 
             Column8.DataPropertyName = "DiemTB";
             Column8.HeaderText = "Điểm TB";
+            Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
+            Column8.Width = 125;
             // 
             // Column9
             // 
             Column9.DataPropertyName = "Loai";
             Column9.HeaderText = "Loại";
+            Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
+            Column9.Width = 125;
             // 
             // fQuanLyDiem
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(865, 504);
             Controls.Add(panel2);

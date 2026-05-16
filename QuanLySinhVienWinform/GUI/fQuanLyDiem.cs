@@ -31,12 +31,15 @@ namespace QuanLySinhVienWinForm.GUI
         private void fQuanLyDiem_Load(object sender, EventArgs e)
         {
             btnLamMoi.PerformClick();
-            
+
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvDiem.DataSource = BLL_Diem.Instance.DanhSach();
+            dgvDiem.Columns["NguoiNhap"].HeaderText = "Người nhập";
+            dgvDiem.Columns["NgayNhap"].HeaderText = "Ngày nhập";
+
             cmbMaSinhVien.DataSource = BLL_SinhVien.Instance.DanhSach();
             cmbMaSinhVien.DisplayMember = "TenSV";
             cmbMaSinhVien.ValueMember = "MaSV";
@@ -96,19 +99,30 @@ namespace QuanLySinhVienWinForm.GUI
                 MessageBox.Show("Vui lòng chọn dòng cần sửa!");
                 return;
             }
+            if (cmbMaSinhVien.SelectedValue == null || cmbMaMonHoc.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn đầy đủ thông tin!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             int id = Convert.ToInt32(dgvDiem.CurrentRow.Cells[0].Value);
 
-            
+
 
             string masv = cmbMaSinhVien.SelectedValue.ToString();
             string mamh = cmbMaMonHoc.SelectedValue.ToString();
             int phantramlop = (int)numPhanTramLop.Value;
             int phantramthi = (int)numPhanTramThi.Value;
 
-            float diemlop = float.Parse(txbDiemLop.Text);
-            float diemthi = float.Parse(txbDiemThi.Text);
-            float diemtb = float.Parse(txbDiemTB.Text);
+            if (!float.TryParse(txbDiemLop.Text, out float diemlop) ||
+                !float.TryParse(txbDiemThi.Text, out float diemthi) ||
+                !float.TryParse(txbDiemTB.Text, out float diemtb))
+            {
+                MessageBox.Show("Điểm phải là số!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string loai = cmbLoai.SelectedValue.ToString();
 
@@ -118,18 +132,41 @@ namespace QuanLySinhVienWinForm.GUI
                 MessageBox.Show("Cập nhật thành công!");
                 btnLamMoi.PerformClick();
             }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txbID.Text);
+            if (string.IsNullOrEmpty(txbID.Text))
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            if (MessageBox.Show($"Bạn có muốn xoá điểm có ID {id}?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (!int.TryParse(txbID.Text, out int id))
+            {
+                MessageBox.Show("ID không hợp lệ!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+                if (MessageBox.Show($"Bạn có muốn xoá điểm có ID {id}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (BLL_Diem.Instance.Xoa(id) == true)
                 {
                     btnLamMoi.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Xoá thất bại!", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -158,5 +195,9 @@ namespace QuanLySinhVienWinForm.GUI
             cmbLoai.Text = dgvDiem.CurrentRow.Cells["Column9"].Value.ToString()?.Trim();
         }
 
+        private void dgvDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

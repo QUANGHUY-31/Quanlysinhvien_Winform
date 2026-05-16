@@ -1,4 +1,5 @@
 ﻿using QuanLySinhVienWinForm.BLL;
+using QuanLySinhVienWinForm.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,19 @@ namespace QuanLySinhVienWinForm.GUI
 
             this.Font = new Font("Segoe UI", 9.5f);
             StyleDataGridView(dgvSinhVien);
+
+            // Phân quyền theo loại tài khoản
+            PhanQuyen();
+        }
+        // Hàm phân quyền
+        private void PhanQuyen()
+        {
+            bool laAdmin = HeThong.LOAITAIKHOAN == "Quản trị viên";
+
+            quảnLýKhoaToolStripMenuItem.Visible = laAdmin;
+            quảnLýLớpToolStripMenuItem.Visible = laAdmin;
+            quảnLýCốVấnHọcTậpToolStripMenuItem.Visible = laAdmin;
+            quánLýTàiKhoảnToolStripMenuItem.Visible = laAdmin;
         }
         private void quánLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,6 +190,7 @@ namespace QuanLySinhVienWinForm.GUI
             string macovan = cmbMaCoVan.SelectedValue.ToString();
             if (BLL_SinhVien.Instance.Them(masv, tensv, ngaysinh, gioitinh, quequan, ngaynhaphoc, malop, makhoa, macovan))
             {
+                MessageBox.Show("Thêm sinh viên thành công");
                 btnLamMoi.PerformClick();
             }
 
@@ -320,6 +335,11 @@ namespace QuanLySinhVienWinForm.GUI
         }
 
         private void cmbMaCoVan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

@@ -79,7 +79,7 @@
             cmbLoaiTaiKhoan.Items.AddRange(new object[] { "Cố Vấn Học Tập", "Quản Trị " });
             cmbLoaiTaiKhoan.Location = new Point(312, 40);
             cmbLoaiTaiKhoan.Name = "cmbLoaiTaiKhoan";
-            cmbLoaiTaiKhoan.Size = new Size(153, 27);
+            cmbLoaiTaiKhoan.Size = new Size(153, 30);
             cmbLoaiTaiKhoan.TabIndex = 11;
             // 
             // txbLoai
@@ -87,7 +87,7 @@
             txbLoai.AutoSize = true;
             txbLoai.Location = new Point(263, 44);
             txbLoai.Name = "txbLoai";
-            txbLoai.Size = new Size(43, 19);
+            txbLoai.Size = new Size(57, 22);
             txbLoai.TabIndex = 10;
             txbLoai.Text = "Loại: ";
             txbLoai.Click += txbLoai_Click;
@@ -137,7 +137,7 @@
             txbMatKhau.Location = new Point(126, 40);
             txbMatKhau.MaxLength = 255;
             txbMatKhau.Name = "txbMatKhau";
-            txbMatKhau.Size = new Size(131, 26);
+            txbMatKhau.Size = new Size(131, 30);
             txbMatKhau.TabIndex = 5;
             txbMatKhau.TextChanged += txbMatKhau_TextChanged;
             // 
@@ -146,7 +146,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(46, 44);
             label3.Name = "label3";
-            label3.Size = new Size(74, 19);
+            label3.Size = new Size(93, 22);
             label3.TabIndex = 4;
             label3.Text = "Mật Khẩu:";
             // 
@@ -155,7 +155,7 @@
             txbTenDangNhap.Location = new Point(204, 8);
             txbTenDangNhap.MaxLength = 255;
             txbTenDangNhap.Name = "txbTenDangNhap";
-            txbTenDangNhap.Size = new Size(313, 26);
+            txbTenDangNhap.Size = new Size(313, 30);
             txbTenDangNhap.TabIndex = 3;
             txbTenDangNhap.TextChanged += textBox2_TextChanged;
             // 
@@ -164,7 +164,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(89, 11);
             label2.Name = "label2";
-            label2.Size = new Size(109, 19);
+            label2.Size = new Size(139, 22);
             label2.TabIndex = 2;
             label2.Text = "Tên Đăng Nhập:";
             label2.Click += label2_Click;
@@ -174,7 +174,7 @@
             txbID.Enabled = false;
             txbID.Location = new Point(46, 8);
             txbID.Name = "txbID";
-            txbID.Size = new Size(37, 26);
+            txbID.Size = new Size(37, 30);
             txbID.TabIndex = 1;
             // 
             // label1
@@ -182,7 +182,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 12);
             label1.Name = "label1";
-            label1.Size = new Size(28, 19);
+            label1.Size = new Size(36, 22);
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
@@ -205,6 +205,7 @@
             dgvTaiKhoan.Location = new Point(0, 0);
             dgvTaiKhoan.Name = "dgvTaiKhoan";
             dgvTaiKhoan.RowHeadersVisible = false;
+            dgvTaiKhoan.RowHeadersWidth = 51;
             dgvTaiKhoan.RowTemplate.Height = 30;
             dgvTaiKhoan.Size = new Size(529, 303);
             dgvTaiKhoan.TabIndex = 1;
@@ -215,6 +216,7 @@
             // 
             Column1.DataPropertyName = "id";
             Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.Width = 65;
             // 
@@ -222,6 +224,7 @@
             // 
             Column2.DataPropertyName = "TenDangNhap";
             Column2.HeaderText = "Tên Đăng Nhập";
+            Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.Width = 145;
             // 
@@ -229,6 +232,7 @@
             // 
             Column3.DataPropertyName = "MatKhau";
             Column3.HeaderText = "Mật Khẩu";
+            Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             Column3.Width = 160;
             // 
@@ -236,12 +240,13 @@
             // 
             Column4.DataPropertyName = "LoaiTaiKhoan";
             Column4.HeaderText = "Loại Tài Khoản";
+            Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.Width = 160;
             // 
             // fQuanLyTaiKhoan
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(529, 421);
             Controls.Add(panel2);
@@ -251,6 +256,7 @@
             Name = "fQuanLyTaiKhoan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Tài Khoản";
+            Load += fQuanLyTaiKhoan_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

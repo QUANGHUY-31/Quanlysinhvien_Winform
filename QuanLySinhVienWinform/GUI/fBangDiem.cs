@@ -35,5 +35,10 @@ namespace QuanLySinhVienWinForm.GUI
         {
 
         }
+
+        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

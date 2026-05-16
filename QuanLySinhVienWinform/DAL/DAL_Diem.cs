@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using QuanLySinhVienWinForm.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,8 +21,8 @@ namespace QuanLySinhVienWinForm.DAL
         public bool Them(string MaSV, string MaMH, int PhanTramTrenLop, int PhanTramThi, float DiemTrenLop, float DiemThi, float DiemTb, string Loai)
         {
             string sql = @"
-                 INSERT INTO Diem (MaSV, MaMH, PhanTramTrenLop, PhanTramThi, DiemTrenLop, DiemThi, DiemTb, Loai)
-                 VALUES (@MaSV, @MaMH, @PhanTramTrenLop, @PhanTramThi, @DiemTrenLop, @DiemThi, @DiemTb, @Loai)";
+                 INSERT INTO Diem (MaSV, MaMH, PhanTramTrenLop, PhanTramThi, DiemTrenLop, DiemThi, DiemTb, Loai, NguoiNhap, NgayNhap)
+                 VALUES (@MaSV, @MaMH, @PhanTramTrenLop, @PhanTramThi, @DiemTrenLop, @DiemThi, @DiemTb, @Loai, @NguoiNhap, @NgayNhap)";
 
             SqlParameter[] parameters =
             {
@@ -32,10 +33,11 @@ namespace QuanLySinhVienWinForm.DAL
                 new SqlParameter("@DiemTrenLop", DiemTrenLop),
                 new SqlParameter("@DiemThi", DiemThi),
                 new SqlParameter("@DiemTb", DiemTb),
-                new SqlParameter("@Loai", Loai)
-                
-
-             };
+                new SqlParameter("@Loai", Loai),
+                // Tự động lấy người nhập và ngày nhập
+                new SqlParameter("@NguoiNhap", HeThong.TENDANGNHAP),
+                new SqlParameter("@NgayNhap", DateTime.Today)
+            };
 
             return KetNoi.Instance.ExcuteNonQuery(sql, parameters) > 0;
         }

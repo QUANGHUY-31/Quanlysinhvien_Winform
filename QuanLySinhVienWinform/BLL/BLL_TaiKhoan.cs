@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLySinhVienWinForm.BLL
 {
-    internal class BLL_TaiKhoan
+    public class BLL_TaiKhoan
     {
         private static BLL_TaiKhoan instance;
         public static BLL_TaiKhoan Instance
@@ -29,11 +29,13 @@ namespace QuanLySinhVienWinForm.BLL
             matkhau = HeThong.Hash(matkhau);
             return DAL_TaiKhoan.Instance.Them(ten, matkhau, loai);
         }
-        public bool SuaHet(string ten, string matkhau, string loai,int id)
+        // Sửa có đổi mật khẩu
+        public bool Sua(string ten, string matkhau, string loai,int id)
         {
             matkhau = HeThong.Hash(matkhau);
             return DAL_TaiKhoan.Instance.Sua_het(ten, matkhau, loai, id);
         }
+        // Sửa không đổi mật khẩu
         public bool KhongSuaMatKhau(string ten, string loai, int id)
         {
             return DAL_TaiKhoan.Instance.KhongSuaMatKhau(ten, loai, id);

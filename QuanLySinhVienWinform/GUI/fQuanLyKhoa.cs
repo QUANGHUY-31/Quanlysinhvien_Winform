@@ -46,6 +46,7 @@ namespace QuanLySinhVienWinForm.GUI
                     if (BLL_Khoa.Instance.Them(makhoa, tenkhoa) == true)
                     {
                         btnLamMoi.PerformClick();
+                        MessageBox.Show("Thêm khoa thành công");
                     }
                 }
                 catch
@@ -87,6 +88,9 @@ namespace QuanLySinhVienWinForm.GUI
             if (BLL_Khoa.Instance.Sua(makhoa, tenkhoa, id))
             {
                 btnLamMoi.PerformClick();
+                MessageBox.Show("Sửa khoa thành công");
+                return;
+
             }
         }
 
@@ -113,6 +117,8 @@ namespace QuanLySinhVienWinForm.GUI
                     if (BLL_Khoa.Instance.Xoa(id) == true)
                     {
                         btnLamMoi.PerformClick();
+                        MessageBox.Show("Xóa khoa thành công");
+                        return;
                     }
                 }
                 catch

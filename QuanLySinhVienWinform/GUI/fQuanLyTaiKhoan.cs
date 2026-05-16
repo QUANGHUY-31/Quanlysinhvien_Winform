@@ -83,7 +83,12 @@ namespace QuanLySinhVienWinForm.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txbID.Text);
+            if (!int.TryParse(txbID.Text, out int id))
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần sửa!", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string tendangnhap = txbTenDangNhap.Text.Trim();
             string matkhau = txbMatKhau.Text.Trim();
             string loaiTK = cmbLoaiTaiKhoan.SelectedItem.ToString();
@@ -101,7 +106,7 @@ namespace QuanLySinhVienWinForm.GUI
                         }
                     }
                     // Sửa Mật Khẩu
-                    if (BLL_TaiKhoan.Instance.KhongSuaMatKhau(tendangnhap, loaiTK, id) == true)
+                    if (BLL_TaiKhoan.Instance.Sua(tendangnhap, matkhau, loaiTK, id) == true)
                     {
                         btnLamMoi.PerformClick();//Bấm lại
                     }
@@ -121,6 +126,12 @@ namespace QuanLySinhVienWinForm.GUI
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvTaiKhoan.DataSource = BLL_TaiKhoan.Instance.DanhSach();
+
+            // reset lại form
+            txbID.Text = "";
+            txbTenDangNhap.Text = "";
+            txbMatKhau.Text = "";
+            cmbLoaiTaiKhoan.SelectedIndex = 0;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -134,8 +145,9 @@ namespace QuanLySinhVienWinForm.GUI
         }
         private void fQuanLyTaiKhoan_Load(object sender, EventArgs e)
         {
-            btnLamMoi.PerformClick(); //bấm lại btnlammoi
-            cmbLoaiTaiKhoan.SelectedIndex = 0;
+            cmbLoaiTaiKhoan.SelectedIndex = 0; // Items đã có sẵn trong Designer
+            btnLamMoi.PerformClick();
+
         }
 
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +161,12 @@ namespace QuanLySinhVienWinForm.GUI
         private void txbMatKhau_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void fQuanLyTaiKhoan_Load_1(object sender, EventArgs e)
+        {
+            cmbLoaiTaiKhoan.SelectedIndex = 0; // Items đã có sẵn trong Designer
+            btnLamMoi.PerformClick();
         }
     }
 }
